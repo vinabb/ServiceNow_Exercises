@@ -1,0 +1,31 @@
+Esercizio 2: Validazione Incidenti Critici
+Scenario:
+L'azienda vuole assicurarsi che tutti gli incidenti con priorità "Alta" e categoria "Sicurezza" siano documentati in modo adeguato.
+Per questo, è necessario creare una validazione che controlli che la descrizione degli incidenti di questa categoria sia sufficientemente dettagliata
+(almeno 50 caratteri) prima che possano essere salvati nel sistema.
+
+Obiettivo:
+Implementare una Business Rule che utilizza un Script Include per eseguire una validazione sui record di incidenti. Se la validazione fallisce,
+l'incidente non verrà salvato e verrà mostrato un messaggio di errore all'utente.
+
+Requisiti:
+Crea uno Script Include che contenga una funzione di validazione per gli incidenti.
+La funzione deve controllare se un incidente ha:
+Priorità: Alta (1).
+Categoria: Sicurezza.
+Descrizione: Almeno 50 caratteri.
+
+Crea una Business Rule sulla tabella Incident che chiami lo Script Include prima dell'inserimento o dell'aggiornamento del record.
+Se la validazione fallisce, blocca il salvataggio e mostra un messaggio di errore all'utente.
+Testa la funzionalità:
+Prova a creare un incidente con priorità alta e categoria sicurezza con una descrizione troppo breve (meno di 50 caratteri): la richiesta deve fallire con un messaggio di errore.
+Ripeti l'operazione con una descrizione più lunga (almeno 50 caratteri): la richiesta deve avere successo.
+ 
+Esempi di Scenari da Testare:
+Incident 1: Priorità = Alta, Categoria = Sicurezza, Descrizione = "Problema critico con la sicurezza del server" (inferiore a 50 caratteri) → Errore.
+Incident 2: Priorità = Alta, Categoria = Sicurezza, Descrizione = "Grave vulnerabilità rilevata nel sistema di sicurezza dei dati. Intervento immediato richiesto."
+(superiore a 50 caratteri) → Salvato con successo.
+Output Atteso:
+Se la descrizione dell’incidente non rispetta i requisiti, l'utente riceverà un messaggio di errore e l’incidente non verrà salvato.
+In caso contrario, il salvataggio avverrà correttamente
+ 

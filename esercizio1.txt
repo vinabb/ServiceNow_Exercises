@@ -1,0 +1,77 @@
+Esercizio 1
+Creazione di Catalog Item e Workflow per la "Richiesta di Accesso a Sistemi"
+
+Scenario
+Un’organizzazione utilizza ServiceNow per gestire le richieste di accesso a sistemi critici (ERP, CRM, HR). 
+Le richieste richiedono approvazioni dinamiche in base al sistema e al livello di accesso richiesto, con task automatici per configurare l'accesso e notifiche personalizzate.
+
+Obiettivo
+Creare un Catalog Item che gestisca le richieste di accesso a vari sistemi, con un Workflow che includa approvazioni dinamiche, task condizionali e invio di notifiche.
+
+Passaggi Dettagliati
+
+1. Creazione del Catalog Item: "Richiesta di Accesso a Sistemi"
+ 
+	Nome dell’Item: "Richiesta di Accesso a Sistemi"
+	Campi da aggiungere:
+	Nome del Sistema (scelta multipla: ERP, CRM, HR, Contabilità)
+	Livello di Accesso (scelta multipla: Lettura, Scrittura, Amministratore)
+	Data di Inizio Accesso (campo data)
+	Motivo della Richiesta (campo testuale)
+
+2. Configurazione delle UI Policy
+ 
+	UI Policy per mostrare/nascondere campi:
+	Se l'utente seleziona "ERP" come sistema e il livello di accesso è Amministratore, mostra un campo aggiuntivo chiamato "Motivazione per Accesso Amministratore".
+	Se l'utente seleziona "CRM" come sistema e il livello di accesso è Lettura, nascondi il campo "Data di Inizio Accesso" 
+	(perché l'accesso di lettura non necessita di una data precisa).
+
+Esatto, prima di creare il Catalog Item e il Workflow, è necessario configurare utenti e ruoli per gestire correttamente le approvazioni. Ecco i passaggi per farlo:
+
+1. Creazione degli Utenti
+ 
+	Vai a User Administration > Users.
+	Crea utenti specifici che rappresentino i diversi approvatori e responsabili di sistema:
+	Manager degli Utenti: questo utente approverà le richieste in generale.
+	Responsabile ERP: approverà le richieste relative al sistema ERP.
+	Responsabile CRM: approverà le richieste relative al sistema CRM.
+	Altri utenti come Responsabile HR o Team di Compliance, se necessari.
+
+2. Creazione dei Ruoli
+ 
+	Vai a User Administration > Roles.
+	Crea ruoli che rappresentino i diversi approvatori o livelli di accesso:
+	role_manager: associato ai manager degli utenti.
+	role_responsabile_erp: associato al responsabile del sistema ERP.
+	role_responsabile_crm: associato al responsabile del sistema CRM.
+
+3. Assegnazione dei Ruoli agli Utenti
+ 
+	Vai nella scheda degli utenti che hai creato e assegna loro i ruoli appropriati.
+	Assegna il ruolo role_manager ai manager degli utenti.
+	Assegna il ruolo role_responsabile_erp al responsabile del sistema ERP.
+	Assegna il ruolo role_responsabile_crm al responsabile del sistema CRM.
+
+3. Configurazione del Workflow Approvals:
+ 
+	Flusso di approvazione dinamico:
+	Se il sistema selezionato è ERP e il livello di accesso è Amministratore, invia la richiesta di approvazione sia al manager dell’utente che al responsabile del sistema ERP.
+	Se il sistema è CRM e il livello di accesso è Scrittura, invia la richiesta di approvazione al responsabile del sistema CRM.
+	Per altri sistemi o livelli di accesso, la richiesta di approvazione va solo al manager dell'utente.
+
+Task automatici:
+ 
+	Dopo l'approvazione, crea automaticamente un task IT per configurare l'accesso al sistema selezionato.
+	Se il sistema è ERP e il livello di accesso è "Amministratore", aggiungi un task di sicurezza avanzata.
+	Se il sistema è CRM con livello di accesso "Lettura", invia una notifica al team di Compliance per informare del nuovo accesso.
+
+Condizioni sui Task:
+ 
+	I task devono essere creati solo dopo che tutte le approvazioni sono state completate con successo.
+	Se una delle approvazioni viene rifiutata, annulla il workflow e invia una notifica di rifiuto all'utente.
+
+4. Notifiche Finali
+ 
+	Una volta completato il workflow:
+	Invia una notifica all’utente con i dettagli dell'accesso approvato.
+	Se la richiesta è stata rifiutata, invia una notifica al responsabile del sistema con i dettagli della richiesta e la motivazione del rifiuto.
