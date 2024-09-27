@@ -1,7 +1,7 @@
 (function executeRule(current, previous /*null when async*/ ) {
 
     var validator = new validazioneIncident();
-    if (!validator.validazioneIncident(current)) {
+    if (!validator.validateIncident(current)) {
         current.setAbortAction(true);
         gs.addInfoMessage("L'incident non può essere creato in quanto il campo Descrizione è troppo corto");
     } else {

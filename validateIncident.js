@@ -5,12 +5,12 @@ validazioneIncident.prototype = {
  
     validateIncident: function(current){
         var descr = current.getValue('description');
-        if (descr.length >= 50){
+        if (!descr || descr.length <= 50){
+            return false;
+        }
+        else {
             gs.log("lunghezza: "+ current.description.length);
             return true;
-        }
-        else{
-            return false;
         }
     },
  
