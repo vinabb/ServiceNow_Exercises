@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2024-09-30 10:25:58">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Esercizio fatto con Delia ed Ismail by AVM</description>
+<inserted/>
+<name>DEMO_Catalog_Exercise 2</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>1676ebc383b01210bf4e75a6feaad304</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-09-30 10:25:57</sys_created_on>
+<sys_id>80e52bc883011210bf4e75a6feaad31e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-09-30 10:25:57</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_include_db49e45783f41210bf4e75a6feaad3a0</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.validazioneIncident&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;This script include validate the lengh of description by AVM&lt;/description&gt;&lt;name&gt;validazioneIncident&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var validazioneIncident = Class.create();
+validazioneIncident.prototype = {
+ 
+    initialize:function(){},
+ 
+    validateIncident: function(current){
+        var descr = current.getValue('description');
+        if (!descr || descr.length &lt;= 50){
+            return false;
+        }
+        else {
+            gs.log("lunghezza: "+ current.description.length);
+            return true;
+        }
+    },
+ 
+    type: 'validazioneIncident'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-27 12:49:18&lt;/sys_created_on&gt;&lt;sys_id&gt;db49e45783f41210bf4e75a6feaad3a0&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;validazioneIncident&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_db49e45783f41210bf4e75a6feaad3a0&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-27 16:26:16&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1162413046</payload_hash>
+<remote_update_set display_value="DEMO_Catalog_Exercise 2">80e52bc883011210bf4e75a6feaad31e</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-09-30 10:25:57</sys_created_on>
+<sys_id>4ce52bc883011210bf4e75a6feaad31e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>192344df2af0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-09-30 10:25:57</sys_updated_on>
+<table/>
+<target_name>validazioneIncident</target_name>
+<type>Script Include</type>
+<update_domain>global</update_domain>
+<update_guid>389bd5d31ef812104e9c1d76e9cd2b76</update_guid>
+<update_guid_history>389bd5d31ef812104e9c1d76e9cd2b76:1162413046,a45a6417aaf41210815922d02af50725:-1622175468,e2e9285738f41210e120f8d45888a6cc:834813884</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_992b601b83f41210bf4e75a6feaad3a2</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;incident&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="incident"&gt;priority=1^category=software^EQ&lt;item display_value="1 - Critical" endquery="false" field="priority" goto="false" newquery="false" operator="=" or="false" value="1"/&gt;&lt;item display_value="Software" endquery="false" field="category" goto="false" newquery="false" operator="=" or="false" value="software"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;BR Validazione Incident&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    var validator = new validazioneIncident();
+    if (!validator.validateIncident(current)) {
+        current.setAbortAction(true);
+        gs.addInfoMessage("L'incident non può essere creato in quanto il campo Descrizione è troppo corto");
+    } else {
+        gs.addInfoMessage("L'incident puo essere creato");
+    }
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-27 12:58:36&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;992b601b83f41210bf4e75a6feaad3a2&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name&gt;BR Validazione Incident&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_992b601b83f41210bf4e75a6feaad3a2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-27 16:30:46&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=992b601b83f41210bf4e75a6feaad3a2"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1314959020</payload_hash>
+<remote_update_set display_value="DEMO_Catalog_Exercise 2">80e52bc883011210bf4e75a6feaad31e</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-09-30 10:25:57</sys_created_on>
+<sys_id>84e52bc883011210bf4e75a6feaad31e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19234520faa0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-09-30 10:25:57</sys_updated_on>
+<table>incident</table>
+<target_name>BR Validazione Incident</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>aa9cd51780f812101ef9a946b0c1d1cc</update_guid>
+<update_guid_history>aa9cd51780f812101ef9a946b0c1d1cc:-1314959020,fabb99d37cf812101080a662df2fe9d1:-969149155,0ff7d99f66b8121043bc433dd2821bd6:-1927461192,e6b6515fdab81210224fe3c8f389708e:-1170510261,7e9070dfb9f41210a1fd930b775a7584:1609705447,15df6c5f94f41210d292e492ebad8d77:1203794927,cd5f2cdbcaf412100a45ea4f2ed2085e:-1170510261,360cac971af41210c5ba1f5f97780d56:1053720116</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
